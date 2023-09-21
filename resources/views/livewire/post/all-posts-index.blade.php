@@ -21,6 +21,7 @@
                         <td>{{$i++}}</td>
                         <td><span class="badge rounded-pill text-bg-primary">{{$post->user->username}}</span></td>
                         <td>{{$post->title}}</td>
+                        <td>{{$post->type}}</td>
                         <td>
                             @if ($post->status == 1)
                                 <span class="badge rounded-pill text-bg-warning">EN BORRADOR</span>
@@ -36,7 +37,6 @@
                                 <h3>No tenemos este tipo de opciones...</h3>
                             @endif
                         </td>
-                        <td>{{$post->type}}</td>
                         <td>
                             <div class="btn-group dropdown">
                                 {{-- class="dropdown-toggle"  --}}

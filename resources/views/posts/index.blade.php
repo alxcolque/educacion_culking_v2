@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 @include('layouts.alerts')
-                <h3>Noticias </h3>
+                <h3>Publicaciones </h3>
                 <a class="btn btn-success btn-submit" href="{{ route('posts.create') }}"><i
                         class='bx bxs-plus-circle'></i>
                     Nuevo</a>

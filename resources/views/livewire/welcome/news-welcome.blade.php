@@ -7,71 +7,30 @@
         </div><!-- end title -->
 
         <div class="row">
+            @foreach ($news as $new)
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="blog-item">
                     <div class="image-blog">
-                        <img src="images/blog_1.jpg" alt="" class="img-fluid">
+                        <img src="{{$new->url}}" alt="" loading="lazy" class="img-fluid">
                     </div>
                     <div class="meta-info-blog">
-                        <span><i class="fa fa-calendar"></i> <a href="#">May 11, 2015</a> </span>
-                        <span><i class="fa fa-tag"></i>  <a href="#">News</a> </span>
+                        <span><i class="fa fa-calendar"></i> <a href="#">{{$new->created_at->format('m/d/Y')}}</a> </span>
+                        <span><i class="fa fa-tag"></i>  <a href="#">{{$new->type}}</a> </span>
                         <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
                     </div>
                     <div class="blog-title">
-                        <h2><a href="#" title="">perferendis doloribus asperiores.</a></h2>
+                        <h2><a href="#" title="">{{$new->title}}</a></h2>
                     </div>
                     <div class="blog-desc">
-                        <p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
+                        <p>{{$new->extract}}</p>
                     </div>
                     <div class="blog-button">
-                        <a class="hover-btn-new orange" href="#"><span>Read More<span></a>
+                        <a class="hover-btn-new orange" href="#"><span>Leer Más...<span></a>
                     </div>
                 </div>
             </div><!-- end col -->
 
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="blog-item">
-                    <div class="image-blog">
-                        <img src="images/blog_2.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div class="meta-info-blog">
-                        <span><i class="fa fa-calendar"></i> <a href="#">May 11, 2015</a> </span>
-                        <span><i class="fa fa-tag"></i>  <a href="#">News</a> </span>
-                        <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
-                    </div>
-                    <div class="blog-title">
-                        <h2><a href="#" title="">perferendis doloribus asperiores.</a></h2>
-                    </div>
-                    <div class="blog-desc">
-                        <p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-                    </div>
-                    <div class="blog-button">
-                        <a class="hover-btn-new orange" href="#"><span>Read More</span></a>
-                    </div>
-                </div>
-            </div><!-- end col -->
-
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="blog-item">
-                    <div class="image-blog">
-                        <img src="images/blog_3.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div class="meta-info-blog">
-                        <span><i class="fa fa-calendar"></i> <a href="#">May 11, 2015</a> </span>
-                        <span><i class="fa fa-tag"></i>  <a href="#">News</a> </span>
-                        <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
-                    </div>
-                    <div class="blog-title">
-                        <h2><a href="#" title="">perferendis doloribus asperiores.</a></h2>
-                    </div>
-                    <div class="blog-desc">
-                        <p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-                    </div>
-                    <div class="blog-button">
-                        <a class="hover-btn-new orange" href="#"><span>Read More</span></a>
-                    </div>
-                </div>
-            </div><!-- end col -->
+            @endforeach
         </div><!-- end row -->
         <div class="text-center">
             <a href="">VER MÁS NOTICIAS</a>

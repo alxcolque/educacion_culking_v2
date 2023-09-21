@@ -5,7 +5,7 @@ namespace App\Livewire\Welcome;
 use App\Models\Post;
 use Livewire\Component;
 
-class NewsWelcome extends Component
+class CourseWelcome extends Component
 {
     public $perPage = 12;
     protected $listeners = [
@@ -30,8 +30,8 @@ class NewsWelcome extends Component
     public function render()
     {
         //$news = User::latest()->paginate($this->perPage);
-        $news = Post::where('status', 3)->where('type','noticia')->latest('id')->limit(3)->get();
+        $courses = Post::where('status', 3)->where('type','curso')->latest('id')->limit(4)->get();
         //$this->emit('userStore');
-        return view('livewire.welcome.news-welcome', compact('news'));
+        return view('livewire.welcome.course-welcome', compact('courses'));
     }
 }
