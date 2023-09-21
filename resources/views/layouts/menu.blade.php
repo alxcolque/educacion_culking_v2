@@ -12,12 +12,19 @@
 
                 </li>
                 <li class="nav-item-c">
-                    <a href="{{route('posts.all')}}" class="nav-link-c">
-                        <i class='bx bx-notepad nav-icon-c'></i>
-                        <span class="nav-name-c">Noticias</span>
+                    <a href="/home" class="nav-link-c active-link-c">
+                        <i class='bx bx-shield-quarter nav-icon-c'></i>
+                        <span class="nav-name-c">Principal</span>
                     </a>
+
                 </li>
                 {{-- <li class="nav-item-c">
+                    <a href="{{route('posts.all')}}" class="nav-link-c">
+                        <i class='bx bx-notepad nav-icon-c'></i>
+                        <span class="nav-name-c">Publicaciones</span>
+                    </a>
+                </li>
+                <li class="nav-item-c">
                     <a href="/users" class="nav-link-c">
                         <i class='bx bx-shield-quarter nav-icon-c'></i>
                         <span class="nav-name-c">Roles</span>

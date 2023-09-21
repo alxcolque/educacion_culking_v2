@@ -7,7 +7,7 @@ use App\Models\Post;
 
 use Livewire\WithPagination;
 
-class Posts extends Component
+class Tutorial extends Component
 {
     use WithPagination;
     protected $paginationTheme = "bootstrap";
@@ -16,10 +16,10 @@ class Posts extends Component
     public function render()
     {
         $posts = Post::where('status', 3)
-            ->where('type','noticia')
+            ->where('type','tutorial')
             ->where('title','LIKE','%'.$this->search.'%')
             ->latest('id')
             ->paginate(12);
-        return view('livewire.post.posts', compact('posts'));
+        return view('livewire.post.tutorial', compact('posts'));
     }
 }

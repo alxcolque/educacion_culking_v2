@@ -51,18 +51,18 @@
         @yield('title')
     </title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <!-- ALL VERSION CSS -->
-    <link rel="stylesheet" href="css/versions.css">
+    <link rel="stylesheet" href="/css/versions.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="/css/custom.css">
 
     <!-- Modernizer for Portfolio -->
-    <script src="js/modernizer.js"></script>
+    <script src="/js/modernizer.js"></script>
 
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
     @livewireStyles
@@ -176,10 +176,10 @@
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
     <!-- ALL JS FILES -->
-    <script src="js/all.js"></script>
+    <script src="/js/all.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
-	<script src="js/timeline.min.js"></script>
+    <script src="/js/custom.js"></script>
+	<script src="/js/timeline.min.js"></script>
 	<script>
 		timeline(document.querySelectorAll('.timeline'), {
 			forceVerticalMode: 700,

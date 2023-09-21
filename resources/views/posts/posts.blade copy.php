@@ -1,12 +1,12 @@
-@extends('layouts.front.app_base')
+@extends('layouts.app')
 
 @section('title')
     Noticias
-@stop
-
-@section('menu')
-    @include('layouts.front.menu')
 @endsection
+@section('menu')
+    @include('layouts.menu')
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-md-3 ms-sm-auto col-lg-3 px-md-5">
@@ -24,22 +24,8 @@
         <div class="col-md-9 ms-sm-auto col-lg-9 px-md-5">
             <div class="container mt-3">
                 <a href="/">Atrás</a>
-                @if (request()->is('noticias'))
-                    <h3>TODAS LAS NOTICIAS</h3>
-                    @livewire('post.posts')
-
-                @elseif (request()->is('cursos'))
-                    <h3>TODOS LOS CURSOS</h3>
-                    @livewire('post.courses')
-                @elseif (request()->is('tutoriales'))
-                    <h3>TODOS LOS TUTORIALES</h3>
-                    @livewire('post.tutorial')
-                @elseif (request()->is('tramites'))
-                    <h3>TODOS LOS TRÁMITES</h3>
-                    @livewire('post.procedure')
-                @else
-                    <h1>Datos no disponible</h1>
-                @endif
+                <h3>TODAS LAS NOTICIAS</h3>
+                @livewire('post.posts')
 
             </div>
         </div>

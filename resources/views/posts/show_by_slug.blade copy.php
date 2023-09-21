@@ -1,4 +1,4 @@
-@extends('layouts.front.app_base')
+@extends('layouts.app')
 @section('twitter_title',$post->title)
 @section('twitter_image',$post->url)
 
@@ -15,7 +15,7 @@
 @section('modified_time',$post->updated_at)
 @section('author',$post->user->username)
 @section('menu')
-    @include('layouts.front.menu')
+    @include('layouts.menu')
 @endsection
 @section('content')
     <div class="col-md-12 ms-sm-auto col-lg-12 px-md-5">
@@ -33,7 +33,7 @@
                             data-action="like"
                             data-size="large"
                             data-show-faces="true"
-                            data-href="{{url('/noticias/',$post->slug)}}"
+                            data-href="https://noticias.culking.com/noticias/cuando-juega-bolivia-vs-argentina"
                             data-share="true">
                         </div>
                     </div>

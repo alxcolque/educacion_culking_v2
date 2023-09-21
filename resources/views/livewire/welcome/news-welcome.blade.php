@@ -25,7 +25,7 @@
                         <p>{{$new->extract}}</p>
                     </div>
                     <div class="blog-button">
-                        <a class="hover-btn-new orange" href="#"><span>Leer Más...<span></a>
+                        <a class="hover-btn-new orange" href="{{route('posts.slug',$new->slug)}}"><span>Leer Más...<span></a>
                     </div>
                 </div>
             </div><!-- end col -->
@@ -33,7 +33,7 @@
             @endforeach
         </div><!-- end row -->
         <div class="text-center">
-            <a href="">VER MÁS NOTICIAS</a>
+            <a href="/noticias">VER MÁS NOTICIAS</a>
         </div>
     </div><!-- end container -->
 </div><!-- end section -->

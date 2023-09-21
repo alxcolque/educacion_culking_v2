@@ -12,27 +12,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbars-host">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#news">Noticias</a></li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item {{request()->is('/')? 'active':''}}"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item {{request()->is('noticias')? 'active':''}}"><a class="nav-link" href="{{request()->is('/')?'#news':'/noticias'}}">Noticias</a></li>
+                    <li class="nav-item dropdown {{request()->is(['cursos','tutoriales'])?'active':''}}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Cursos </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="#course">Más Recientes </a>
-                            <a class="dropdown-item" href="course-grid-2.html">Tutoriales </a>
-                            <a class="dropdown-item" href="course-grid-3.html">Todos los cursos </a>
+                            <a class="dropdown-item" href="/#course">Más Recientes </a>
+                            <a class="dropdown-item {{request()->is('tutoriales')?'active':''}}" href="/tutoriales">Tutoriales </a>
+                            <a class="dropdown-item {{request()->is('cursos')?'active':''}}" href="/cursos">Todos los cursos </a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {{request()->is('unidad-educativa')?'active':''}}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Unidad </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="course-grid-2.html">Pazña </a>
-                            <a class="dropdown-item" href="course-grid-2.html">Barrientos </a>
-                            <a class="dropdown-item" href="course-grid-3.html">AHSDU </a>
-                        </div>
+                        @livewire('post.unit')
+
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Trámites</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contactos</a></li>
+                    <li class="nav-item {{request()->is('tramites')?'active':''}}"><a class="nav-link" href="/tramites">Trámites</a></li>
+                    <li class="nav-item {{request()->is('acercade')?'active':''}}"><a class="nav-link" href="/#about">Acerca de</a></li>
+                    <li class="nav-item {{request()->is('contactos')?'active':''}}"><a class="nav-link" href="/#footer">Contactos</a></li>
                 </ul>
                 @guest
                     @php
@@ -42,7 +39,7 @@
                         {{-- <a class="btn btn-outline-secondary btn-sm me-2" href="/login">{{ __('Iniciar sesión') }}</a> --}}
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="hover-btn-new log orange" href="#" data-toggle="modal" data-target="#login"><span>Book Now</span></a></li>
+                            <li><a class="hover-btn-new log orange" href="#" data-toggle="modal" data-target="#login"><span>Login</span></a></li>
                         </ul>
                     @else
                         <a class="btn btn-outline-secondary btn-sm me-2"
@@ -61,11 +58,15 @@
                             <a class="dropdown-item" href="{{ url('home') }}">
                                 <i class='bx bx-home'></i> {{ __('Principal') }}
                             </a>
+                            @role('editor')
                             <a class="dropdown-item" href="{{ url('posts') }}">
                                 <i class='bx bx-run'></i> {{ __('Publicaciones') }}
                             </a>
-
+                            @endrole
                             @role('admin')
+                            <a class="dropdown-item" href="{{ url('posts') }}">
+                                <i class='bx bx-run'></i> {{ __('Publicaciones') }}
+                            </a>
                             <a class="dropdown-item" href="{{ url('carrusels') }}">
                                 <i class='bx bx-slider'></i> {{ __('Carruseles') }}
                             </a>

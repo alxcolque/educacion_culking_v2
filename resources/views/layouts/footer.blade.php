@@ -1,4 +1,4 @@
-<footer class="container mb-5">
+<footer class="container mb-5" id="footer">
         <div class="row">
           <div class="col-md-6 footer-column">
             <ul class="nav flex-column">

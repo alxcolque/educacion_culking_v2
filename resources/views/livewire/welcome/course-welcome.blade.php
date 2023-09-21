@@ -14,7 +14,7 @@
                     </div>
                     <div class="course-br">
                         <div class="course-title">
-                            <h2><a href="#" title="">{{$course->title}}</a></h2>
+                            <h2><a href="{{route('posts.slug',$course->slug)}}" title="">{{$course->title}}</a></h2>
                         </div>
                         <div class="course-desc">
                             <p>{{$course->extract}}</p>
@@ -44,7 +44,7 @@
         <hr class="hr3">
 
         <div class="text-center">
-            <a href="">VER MÁS NOTICIAS</a>
+            <a href="/cursos">VER MÁS CURSOS</a>
         </div>
     </div><!-- end container -->
 </div><!-- end section -->

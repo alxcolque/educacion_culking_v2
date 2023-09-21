@@ -45,8 +45,11 @@ Route::get('/', function () {
     }
     return view('welcome', compact('carrusels'));
 });
-Route::get('/noticias/{slug}', [PostController::class, 'post'])->name('posts.slug');
+Route::get('/post/{slug}', [PostController::class, 'post'])->name('posts.slug');
 Route::get('/noticias', [PostController::class, 'posts'])->name('posts.all');
+Route::get('/cursos', [PostController::class, 'posts'])->name('posts.all');
+Route::get('/tutoriales', [PostController::class, 'posts'])->name('posts.all');
+Route::get('/tramites', [PostController::class, 'posts'])->name('posts.all');
 Route::get('/category/{category}', [PostController::class, 'category'])->name('posts.category');
 Route::get('/tag/{tag}', [PostController::class, 'tag'])->name('posts.tag');
 

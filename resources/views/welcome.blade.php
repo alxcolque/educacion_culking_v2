@@ -1,4 +1,4 @@
-@extends('layouts..front.app_base')
+@extends('layouts.front.app_base')
 
 @section('title')
     Culking | Educación
