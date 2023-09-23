@@ -4,9 +4,10 @@ namespace App\Livewire\Post;
 
 use App\Models\Post;
 use Livewire\Component;
-
+use Livewire\WithPagination;
 class Unit extends Component
 {
+    use WithPagination;
     public $perPage = 2;
     protected $listeners = [
         'load-more' => 'loadMore'

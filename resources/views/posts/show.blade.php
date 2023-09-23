@@ -55,6 +55,9 @@
                     </ul>
                 </div>
 
+                {{-- <div id="codigo1">
+
+                </div> --}}
             </div>
         </div>
     </div>
@@ -63,6 +66,7 @@
 @stop
 
 @section('css')
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
         #social-links ul {
@@ -125,4 +129,10 @@
 @stop
 
 @section('js')
+
+{{-- <script id="" src="https://gist.github.com/alxcolque/7db40d582b56374c53b41427b4c94564.js"></script> --}}
+{{-- <script>
+    $("#codigo1").html('<script src="https://gist.github.com/alxcolque/7db40d582b56374c53b41427b4c94564.js">)<\/script>');
+</script> --}}
+
 @stop
