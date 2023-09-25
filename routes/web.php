@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CarruselController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CodeController;
 use App\Http\Controllers\InstitutionController;
 use App\Http\Controllers\PostController;
 use App\Models\Carrusel;
@@ -91,6 +92,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
             Route::resource('categories', CategoryController::class);
             Route::resource('carrusels', CarruselController::class);
             Route::resource('institutions', InstitutionController::class);
+            Route::resource('codes', CodeController::class);
         });
     });
 });

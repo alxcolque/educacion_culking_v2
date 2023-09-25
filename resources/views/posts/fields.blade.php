@@ -38,6 +38,12 @@
         <small class="text-danger">{{ $message }}</small>
     @enderror
 </div>
+<!-- Button trigger modal -->
+@isset($post)
+    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Agregar código
+    </button>
+@endisset
 
 <div class="form-group">
     <label><strong>Cuerpo:</strong></label><b class="text-danger"> *</b>

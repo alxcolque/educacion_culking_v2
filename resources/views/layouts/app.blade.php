@@ -76,6 +76,9 @@
     <script src="{{ asset('js/main.js') }}"></script>
     @livewireScripts
     @yield('js')
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
 </body>
 
 </html>

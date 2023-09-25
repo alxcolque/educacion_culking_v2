@@ -148,4 +148,17 @@
 @stop
 
 @section('js')
+<script type="text/javascript">
+    // jQuery used as an example of delaying until load.
+    $(function() {
+        // Build url params and make the ad call
+        var data = <?php echo json_encode($codes); ?>;
+        Object.keys(data).forEach(function(key, value) {
+            //console.log('Key : ' + key + ', Value : ' + data[key].html_id)
+            postscribe('#'+data[key].html_id, '<script src="'+data[key].gist_link+'">)<\/script>');
+        })
+        //postscribe('#codigo2', '<script src="https://gist.github.com/alxcolque/7db40d582b56374c53b41427b4c94564.js">)<\/script>');
+
+    });
+</script>
 @stop

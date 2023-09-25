@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Code;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -79,8 +80,11 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        $codes = Code::where('post_id', $post->id )
+        ->latest('id')
+        ->get();
         $this->authorize('author', $post);
-        return view('posts.show', compact('post'));
+        return view('posts.show', compact('post','codes'));
     }
 
     /**
@@ -154,8 +158,11 @@ class PostController extends Controller
     public function post($slug)
     {
         $post = Post::where('slug', $slug)->where('status', 3)->first();
+        $codes = Code::where('post_id', $post->id )
+        ->latest('id')
+        ->get();
         //$this->authorize('status', $post);
-        return view('posts.show_by_slug', compact('post'));
+        return view('posts.show_by_slug', compact('post','codes'));
     }
     public function posts()
     {

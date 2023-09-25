@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('meta')
-<meta property="og:url"                content="{{url('/noticias/',$post->slug)}}" />
-<meta property="og:type"               content="article" />
-<meta property="og:title"              content="{{$post->title}}" />
-<meta property="og:description"        content="{{$post->extract}}" />
-<meta property="og:image"              content="{{$post->url}}" />
+    <meta property="og:url" content="{{ url('/noticias/', $post->slug) }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ $post->title }}" />
+    <meta property="og:description" content="{{ $post->extract }}" />
+    <meta property="og:image" content="{{ $post->url }}" />
 @endsection
 @section('title')
     {{ $post->slug }}
@@ -55,9 +55,7 @@
                     </ul>
                 </div>
 
-                {{-- <div id="codigo1">
 
-                </div> --}}
             </div>
         </div>
     </div>
@@ -129,10 +127,20 @@
 @stop
 
 @section('js')
+    <!-- Modal -->
 
-{{-- <script id="" src="https://gist.github.com/alxcolque/7db40d582b56374c53b41427b4c94564.js"></script> --}}
-{{-- <script>
-    $("#codigo1").html('<script src="https://gist.github.com/alxcolque/7db40d582b56374c53b41427b4c94564.js">)<\/script>');
-</script> --}}
+    <script type="text/javascript">
+        // jQuery used as an example of delaying until load.
+        $(function() {
+            // Build url params and make the ad call
+            var data = <?php echo json_encode($codes); ?>;
+            Object.keys(data).forEach(function(key, value) {
+                //console.log('Key : ' + key + ', Value : ' + data[key].html_id)
+                postscribe('#'+data[key].html_id, '<script src="'+data[key].gist_link+'">)<\/script>');
+            })
+            //postscribe('#codigo2', '<script src="https://gist.github.com/alxcolque/7db40d582b56374c53b41427b4c94564.js">)<\/script>');
+
+        });
+    </script>
 
 @stop
