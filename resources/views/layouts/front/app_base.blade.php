@@ -23,6 +23,7 @@
     <meta property="og:image" content="@yield('fb_image')" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="fb:app_id" content="376948262489475">
 
     <meta property="article:published_time" content="@yield('published_time')" />
     <meta property="article:modified_time" content="@yield('modified_time')" />
