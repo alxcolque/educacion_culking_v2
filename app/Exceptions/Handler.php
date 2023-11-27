@@ -27,4 +27,11 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    /// Added method to create for redirect error 419 expired
+    public function report(Throwable $e)
+    {
+        if ($e instanceof \Illuminate\Session\TokenMismatchException) {
+            return redirect()->route('login');
+        }
+    }
 }

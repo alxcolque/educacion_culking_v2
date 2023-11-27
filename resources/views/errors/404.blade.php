@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Inicio | Culking
+    404 not found | Culking
 @stop
 
 @section('menu')
