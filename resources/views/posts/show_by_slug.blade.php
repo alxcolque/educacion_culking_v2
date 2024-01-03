@@ -30,10 +30,10 @@
                             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v11.0"
                                 nonce="ccaa4s"></script>
                             <div class="fb-like" data-layout="standard" data-action="like" data-size="large"
-                                data-show-faces="true" data-href="{{ url('/', $post->slug) }}" data-share="true">
+                                data-show-faces="true" data-href="{{ url('/post/', $post->slug) }}" data-share="true">
                             </div>
                         </div>
-                        {!! Share::page(url('/' . $post->slug))->facebook()->twitter()->whatsapp()->telegram()->linkedin()->reddit() !!}
+                        {!! Share::page(url('/post/' . $post->slug))->facebook()->twitter()->whatsapp()->telegram()->linkedin()->reddit() !!}
                     </div>
 
 
