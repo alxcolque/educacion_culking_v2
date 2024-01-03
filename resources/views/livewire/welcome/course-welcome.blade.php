@@ -9,9 +9,12 @@
             @foreach ($courses as $course)
             <div class="col-lg-3 col-md-6 col-12">
                 <div class="course-item">
-                    <div class="image-blog">
-                        <img src="{{$course->url}}" alt="" class="img-fluid">
-                    </div>
+                    <a href="{{route('posts.slug',$course->slug)}}">
+                        <div class="image-blog">
+                            <img src="{{$course->url}}" alt="" class="img-fluid">
+                        </div>
+
+                    </a>
                     <div class="course-br">
                         <div class="course-title">
                             <h2><a href="{{route('posts.slug',$course->slug)}}" title="">{{$course->title}}</a></h2>
