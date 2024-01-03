@@ -33,7 +33,7 @@
                                 data-show-faces="true" data-href="{{ url('/', $post->slug) }}" data-share="true">
                             </div>
                         </div>
-                        {!! Share::page(url('/noticias/' . $post->slug))->facebook()->twitter()->whatsapp()->telegram()->linkedin()->reddit() !!}
+                        {!! Share::page(url('/' . $post->slug))->facebook()->twitter()->whatsapp()->telegram()->linkedin()->reddit() !!}
                     </div>
 
 
